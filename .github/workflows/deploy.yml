@@ -16,6 +16,11 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '20'
+          
+      - name: Configure Git
+        run: |
+          git config --local user.email "teplostanski@yandex.ru"
+          git config --local user.name "teplostanski"
 
       - name: Install dependencies
         run: npm install
