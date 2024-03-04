@@ -1,29 +1,33 @@
-name: Deploy on Main Branch
+name: Deploy to GitHub Pages
 
 on:
   push:
     branches:
-      - main
+      - main  # Замените 'main' на имя вашей основной ветки, если оно отличается
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+    - uses: actions/checkout@v2
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '20'
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'  # Используйте нужную версию Node.js
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build and Deploy
+      run: |
+        npm run build
+        npm run deploy:action
+      env:
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
           
       - name: Configure Git
         run: |
-          git config --local user.email "teplostanski@yandex.ru"
-          git config --local user.name "teplostanski"
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Run deploy script
-        run: npm run deploy
+          git config --global user.email "teplostanski@yandex.ru"
+          git config --global user.name "teplostanski"
