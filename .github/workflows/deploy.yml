@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # Замените 'main' на имя вашей основной ветки, если оно отличается
+      - main
 
 jobs:
   build-and-deploy:
@@ -15,7 +15,7 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: '14'  # Используйте нужную версию Node.js
+        node-version: '20'
 
     - name: Install dependencies
       run: npm install
