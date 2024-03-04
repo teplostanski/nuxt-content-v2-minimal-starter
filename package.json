@@ -1,0 +1,19 @@
+{
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "deploy": "nuxt generate && gh-pages --dotfiles -d .output/public"
+  },
+  "dependencies": {
+    "@nuxt/content": "^2.12.0",
+    "nuxt": "^3.10.3",
+    "nuxt-content-assets": "^1.3.3"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.1.1"
+  }
+}
