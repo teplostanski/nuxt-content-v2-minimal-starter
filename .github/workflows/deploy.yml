@@ -27,7 +27,7 @@ jobs:
       env:
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
           
-      - name: Configure Git
-        run: |
-          git config --global user.email "teplostanski@yandex.ru"
-          git config --global user.name "teplostanski"
+    - name: Configure Git
+      run: |
+        git config --global user.email "teplostanski@yandex.ru"
+        git config --global user.name "teplostanski"
