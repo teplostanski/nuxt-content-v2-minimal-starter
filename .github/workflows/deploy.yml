@@ -17,6 +17,11 @@ jobs:
       with:
         node-version: '20'
 
+    - name: Configure Git
+      run: |
+        git config --global user.email "teplostanski@yandex.ru"
+        git config --global user.name "teplostanski"
+
     - name: Install dependencies
       run: npm install
 
@@ -26,8 +31,3 @@ jobs:
         npm run deploy:action
       env:
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
-          
-    - name: Configure Git
-      run: |
-        git config --global user.email "teplostanski@yandex.ru"
-        git config --global user.name "teplostanski"
