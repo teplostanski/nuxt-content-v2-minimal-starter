@@ -1,0 +1,1 @@
+const e="Hello, {name}!",l="Language",n="Blog",t={hello:e,language:l,title:n},o="Bonjour, {name}!",a="Langue",g="Blogue",s={hello:o,language:a,title:g},c="Привет、{name}！",u="Язык",i="Блог",h={hello:c,language:u,title:i},$=()=>({legacy:!1,globalInjection:!0,messages:{en:t,fr:s,ru:h}});export{$ as default};
