@@ -29,15 +29,15 @@
 import { onMounted } from 'vue';
 import { useLocaleStore } from '~/store/locale';
 
-import { useI18n } from 'vue-i18n'
+import { useI18n } from 'vue-i18n';
 
-const localeStore = useLocaleStore()
-const { locale } = useI18n()
+const localeStore = useLocaleStore();
+const { locale } = useI18n();
 
 const changeLocale = () => {
-  locale.value = localeStore.locale // Обновление локали i18n
-  localeStore.setLocale(localeStore.locale) // Сохранение выбранной локали в куки
-}
+  locale.value = localeStore.locale; // Обновление локали i18n
+  localeStore.setLocale(localeStore.locale); // Сохранение выбранной локали в куки
+};
 
 onMounted(() => {
   localeStore.initLocale();
