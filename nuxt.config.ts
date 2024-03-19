@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   ssr: true,
   routeRules: {
-    "/ssg": { prerender: true },
+    "/ssg": { prerender: false },
   },
   modules: ['@nuxt/content', 'nuxt-content-assets', '@nuxtjs/i18n', '@pinia/nuxt'],
   hooks: {
