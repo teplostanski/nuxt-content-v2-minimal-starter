@@ -1,0 +1,1 @@
+import{a9 as c,W as o}from"./entry.DHzDBt2T.js";const l=c("locale",{state:()=>({locale:"en"}),actions:{setLocale(e){this.locale=e;const a=o("curentLocale");a.value=e},initLocale(){const e=o("curentLocale");e.value&&(this.locale=e.value)}}});export{l as u};
