@@ -36,7 +36,7 @@ import { useI18n } from 'vue-i18n'
 const localeStore = useLocaleStore()
 const { locale } = useI18n()
 // Используйте useAsyncData для асинхронной загрузки отфильтрованных статей
-const { data: blogPosts, refresh } = await useAsyncData(() =>
+const { data: blogPosts, refresh } = await useFetch(() =>
   queryContent('/blog')
     .where({ lang: locale.value })
     .sort({ date: -1 })
