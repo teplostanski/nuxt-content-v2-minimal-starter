@@ -2,7 +2,7 @@ import { defineNuxtConfig } from 'nuxt/config';
 
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  ssr: true,
+  ssr: false,
   modules: ['@nuxt/content', 'nuxt-content-assets', '@nuxtjs/i18n', '@pinia/nuxt'],
   hooks: {
     close: () => {
