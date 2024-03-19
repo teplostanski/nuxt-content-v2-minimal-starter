@@ -2,7 +2,10 @@ import { defineNuxtConfig } from 'nuxt/config';
 
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  ssr: false,
+  ssr: true,
+  routeRules: {
+    "/ssg": { prerender: true },
+  },
   modules: ['@nuxt/content', 'nuxt-content-assets', '@nuxtjs/i18n', '@pinia/nuxt'],
   hooks: {
     close: () => {
