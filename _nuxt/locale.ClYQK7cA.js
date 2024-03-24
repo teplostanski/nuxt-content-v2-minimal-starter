@@ -1,1 +1,0 @@
-import{ac as c,Z as o}from"./entry.STDnmh5k.js";const l=c("locale",{state:()=>({locale:"en"}),actions:{setLocale(e){this.locale=e;const a=o("curentLocale");a.value=e},initLocale(){const e=o("curentLocale");e.value&&(this.locale=e.value)}}});export{l as u};
