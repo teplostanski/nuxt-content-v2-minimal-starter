@@ -3,7 +3,7 @@ export default function useGitHubAuth() {
   const authenticateWithGitHub = () => {
     const clientId = '6b23ac4984f4163d5509'; // Замените на ваш Client ID
     const redirectUri = 'https://blog.teplostanski.dev/'; // Замените на URL вашего приложения на GitHub Pages
-    const githubOAuthUrl = `https://github.com/login/oauth/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&scope=repo&response_type=token`;
+    const githubOAuthUrl = `https://github.com/login/oauth/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&scope=repo&response_type=code`;
 
     window.location.href = githubOAuthUrl;
   };
@@ -16,11 +16,14 @@ export default function useGitHubAuth() {
       return;
     }
 
+    // Используйте CORS Anywhere или другой серверный прокси
+    const proxyUrl = 'https://cors-anywhere.herokuapp.com/'; // Пример URL для CORS Anywhere
+
     const clientId = '6b23ac4984f4163d5509'; // Замените на ваш Client ID
     const clientSecret = 'c41cd92f37d42c29a4b9cc6e779c2c086a0f382d'; // Замените на ваш Client Secret
     const redirectUri = 'https://blog.teplostanski.dev/'; // Замените на URL вашего приложения на GitHub Pages
 
-    fetch(`https://github.com/login/oauth/access_token`, {
+    fetch(`${proxyUrl}https://github.com/login/oauth/access_token`, {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -37,9 +40,10 @@ export default function useGitHubAuth() {
     .then(data => {
       const accessToken = data.access_token;
       console.log('Access Token:', accessToken);
-      // Используйте accessToken для доступа к API GitHub
-      // Например, получение информации о репозитории
-      fetch('https://api.github.com/repos/teplostanski/uncrunch', {
+      // Теперь у вас есть accessToken для использования с API GitHub
+
+      // Пример запроса к API GitHub с использованием accessToken
+      fetch(`${proxyUrl}https://api.github.com/repos/teplostanski/uncrunch`, {
         headers: {
           'Authorization': `token ${accessToken}`,
         },
