@@ -1,1 +1,0 @@
-import{_ as a}from"./nuxt-link.KTey-Y1C.js";import{_ as s,c as n,a as e,b as c,w as r,q as _,o as l,d}from"./entry.CLbADZtv.js";const i={},f={class:"header"};function m(t,u){const o=a;return l(),n("div",null,[e("div",f,[c(o,{to:"/",class:"link"},{default:r(()=>[d("Home")]),_:1})]),e("main",null,[_(t.$slots,"default")])])}const h=s(i,[["render",m]]);export{h as default};
